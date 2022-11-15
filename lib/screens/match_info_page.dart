@@ -1,3 +1,4 @@
+import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
 
 import '../constants.dart';
@@ -143,13 +144,14 @@ class _MatchInfoState extends State<MatchInfo> {
           height: _deviceHeight * 0.02,
         ),
         ListView.separated(
+            physics: const NeverScrollableScrollPhysics(),
             shrinkWrap: true,
             itemBuilder: (context, index) {
               return _buildTicketsDetailsColumn();
             },
             separatorBuilder: (context, index) {
               return SizedBox(
-                height: _deviceHeight * 0.01,
+                height: _deviceHeight * 0.02,
               );
             },
             itemCount: 3)
@@ -158,108 +160,148 @@ class _MatchInfoState extends State<MatchInfo> {
   }
 
   Widget _buildTicketsDetailsColumn() {
-    return Column(
-      children: [
-        Container(
-          height: _deviceHeight * 0.12,
-          child: Card(
-            margin: const EdgeInsets.only(bottom: 2),
-            shape: const BeveledRectangleBorder(
-              borderRadius: BorderRadius.only(
-                bottomRight: Radius.circular(5),
-                bottomLeft: Radius.circular(5),
-              ),
-            ),
-            color: const Color(0xff2D2D2D),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 8.0),
-              child: ListTile(
-                leading: Container(
-                  width: 34,
-                  height: 34,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    border: Border.all(width: 1, color: Colors.white),
-                  ),
-                  child: Image.asset(
-                    'assets/images/blank-profile-picture.png',
-                    height: 34,
-                    width: 34,
-                  ),
-                ),
-                title: const Text(
-                  'Marilyn Bridges James',
-                  maxLines: 1,
-                  style: kTitleUserMainListTile,
-                ),
-                subtitle: const Padding(
-                  padding: EdgeInsets.only(top: 8.0),
-                  child: Text(
-                    '#170122708123',
-                    style: kSubTitleUserMainListTile,
-                  ),
-                ),
-              ),
-            ),
-          ),
-        ),
-        Container(
-          height: _deviceHeight * 0.12,
-          child: Card(
-            margin: const EdgeInsets.only(bottom: 2),
-            shape: const BeveledRectangleBorder(
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(5),
-                topRight: Radius.circular(5),
-              ),
-            ),
-            color: Color(0xff2D2D2D),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 15.0, right: 10, top: 20),
-              child: Column(
+    return Container(
+      // padding: EdgeInsets.all(10),
+      margin: const EdgeInsets.only(bottom: 0),
+      color: const Color(0xff2D2D2D),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: 8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              child: Row(
                 children: [
-                  Row(
-                    children: const [
-                      Text(
-                        'Ticket Type: ',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
-                        ),
-                      ),
-                      Text(
-                        'MATCH Business Seat',
-                        style: kDescDialogTS,
-                      ),
-                    ],
+                  Container(
+                    width: 34,
+                    height: 34,
+                    clipBehavior: Clip.antiAlias,
+                    decoration: BoxDecoration(
+                      shape: BoxShape.circle,
+                      border: Border.all(width: 1, color: Colors.white),
+                    ),
+                    child: Image.asset(
+                      'assets/images/blank-profile-picture.png',
+                      height: 34,
+                      width: 34,
+                    ),
                   ),
                   SizedBox(
-                    height: _deviceHeight * 0.01,
+                    width: _deviceWidth * 0.02,
                   ),
-                  Row(
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: const [
                       Text(
-                        'Seat: ',
-                        style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.white,
-                        ),
+                        'Marilyn Bridges James',
+                        maxLines: 1,
+                        style: kTitleUserMainListTile,
                       ),
-                      Text(
-                        'Block 112 / Row S / Seat 1',
-                        style: kDescDialogTS,
+                      Padding(
+                        padding: EdgeInsets.only(top: 8.0),
+                        child: Text(
+                          '#170122708123',
+                          style: kSubTitleUserMainListTile,
+                        ),
                       ),
                     ],
                   ),
                 ],
               ),
             ),
-          ),
+            SizedBox(
+              height: _deviceHeight * 0.01,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Container(
+                  margin: EdgeInsets.only(right: 10),
+                  height: 15,
+                  width: 15,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+                DottedLine(
+                  lineLength: _deviceWidth * 0.84,
+                ),
+                Container(
+                  height: 15,
+                  width: 15,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    shape: BoxShape.circle,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(
+              height: _deviceHeight * 0.01,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 15, left: 15),
+              child: Row(
+                children: const [
+                  Text(
+                    'Ticket Type: ',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    'MATCH Business Seat',
+                    style: kDescDialogTS,
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: _deviceHeight * 0.01,
+            ),
+            Padding(
+              padding: const EdgeInsets.only(right: 15, left: 15, bottom: 10),
+              child: Row(
+                children: const [
+                  Text(
+                    'Seat: ',
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
+                  Text(
+                    'Block 112 / Row S / Seat 1',
+                    style: kDescDialogTS,
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
+    // Container(
+    //   height: _deviceHeight * 0.12,
+    //   child: Card(
+    //     margin: const EdgeInsets.only(bottom: 0),
+    //     shape: const BeveledRectangleBorder(
+    //       borderRadius: BorderRadius.only(
+    //         topLeft: Radius.circular(5),
+    //         topRight: Radius.circular(5),
+    //       ),
+    //     ),
+    //     color: Color(0xff2D2D2D),
+    //     child: Padding(
+    //       padding: const EdgeInsets.only(left: 15.0, right: 10, top: 20),
+    //       child:
+    //     ),
+    //   ),
+    // ),
   }
 }

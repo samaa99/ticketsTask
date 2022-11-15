@@ -105,6 +105,9 @@ class _UsersListPageState extends State<UsersListPage> {
               }),
           onTap: () {
             showModalBottomSheet(
+                shape: const RoundedRectangleBorder(
+                  borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+                ),
                 isScrollControlled: true,
                 context: context,
                 builder: (context) => const UserDetails());

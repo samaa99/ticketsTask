@@ -33,7 +33,13 @@ class _UserDetailsState extends State<UserDetails> {
     _deviceHeight = MediaQuery.of(context).size.height;
     _deviceWidth = MediaQuery.of(context).size.width;
     return Container(
-      color: Colors.black,
+      decoration: const BoxDecoration(
+        color: Colors.black,
+        borderRadius: BorderRadius.only(
+          topRight: Radius.circular(20),
+          topLeft: Radius.circular(20),
+        ),
+      ),
       child: SingleChildScrollView(
         child: SolidBottomSheet(
           maxHeight: _deviceHeight * 0.9,
@@ -218,6 +224,7 @@ class _UserDetailsState extends State<UserDetails> {
           height: _deviceHeight * 0.015,
         ),
         ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 2,
           itemBuilder: (context, index) {
@@ -258,6 +265,7 @@ class _UserDetailsState extends State<UserDetails> {
           height: _deviceHeight * 0.015,
         ),
         ListView.separated(
+          physics: const NeverScrollableScrollPhysics(),
           shrinkWrap: true,
           itemCount: 3,
           itemBuilder: (context, index) {
