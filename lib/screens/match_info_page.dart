@@ -219,8 +219,8 @@ class _MatchInfoState extends State<MatchInfo> {
                   offset: const Offset(-9, 0),
                   child: Container(
                     margin: const EdgeInsets.only(right: 10),
-                    height: 15,
-                    width: 15,
+                    height: _deviceHeight * 0.02,
+                    width: _deviceWidth * 0.04,
                     decoration: const BoxDecoration(
                       color: Colors.black,
                       shape: BoxShape.circle,
@@ -233,8 +233,8 @@ class _MatchInfoState extends State<MatchInfo> {
                 Transform.translate(
                   offset: const Offset(9, 0),
                   child: Container(
-                    height: 15,
-                    width: 15,
+                    height: _deviceHeight * 0.02,
+                    width: _deviceWidth * 0.04,
                     decoration: const BoxDecoration(
                       color: Colors.black,
                       shape: BoxShape.circle,
