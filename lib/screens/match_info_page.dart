@@ -161,7 +161,6 @@ class _MatchInfoState extends State<MatchInfo> {
 
   Widget _buildTicketsDetailsColumn() {
     return Container(
-      // padding: EdgeInsets.all(10),
       margin: const EdgeInsets.only(bottom: 0),
       color: const Color(0xff2D2D2D),
       child: Padding(
@@ -216,24 +215,30 @@ class _MatchInfoState extends State<MatchInfo> {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Container(
-                  margin: EdgeInsets.only(right: 10),
-                  height: 15,
-                  width: 15,
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                    shape: BoxShape.circle,
+                Transform.translate(
+                  offset: const Offset(-9, 0),
+                  child: Container(
+                    margin: const EdgeInsets.only(right: 10),
+                    height: 15,
+                    width: 15,
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.circle,
+                    ),
                   ),
                 ),
                 DottedLine(
                   lineLength: _deviceWidth * 0.84,
                 ),
-                Container(
-                  height: 15,
-                  width: 15,
-                  decoration: const BoxDecoration(
-                    color: Colors.black,
-                    shape: BoxShape.circle,
+                Transform.translate(
+                  offset: const Offset(9, 0),
+                  child: Container(
+                    height: 15,
+                    width: 15,
+                    decoration: const BoxDecoration(
+                      color: Colors.black,
+                      shape: BoxShape.circle,
+                    ),
                   ),
                 ),
               ],
@@ -286,22 +291,5 @@ class _MatchInfoState extends State<MatchInfo> {
         ),
       ),
     );
-    // Container(
-    //   height: _deviceHeight * 0.12,
-    //   child: Card(
-    //     margin: const EdgeInsets.only(bottom: 0),
-    //     shape: const BeveledRectangleBorder(
-    //       borderRadius: BorderRadius.only(
-    //         topLeft: Radius.circular(5),
-    //         topRight: Radius.circular(5),
-    //       ),
-    //     ),
-    //     color: Color(0xff2D2D2D),
-    //     child: Padding(
-    //       padding: const EdgeInsets.only(left: 15.0, right: 10, top: 20),
-    //       child:
-    //     ),
-    //   ),
-    // ),
   }
 }

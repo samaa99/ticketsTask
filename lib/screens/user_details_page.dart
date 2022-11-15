@@ -112,8 +112,6 @@ class _UserDetailsState extends State<UserDetails> {
     return Align(
       alignment: Alignment.center,
       child: Column(
-        // mainAxisAlignment: MainAxisAlignment.center,
-        // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             width: 100,
@@ -149,7 +147,6 @@ class _UserDetailsState extends State<UserDetails> {
 
   Widget _buildMatchTicketsInfoColumn() {
     return Column(
-      // mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(

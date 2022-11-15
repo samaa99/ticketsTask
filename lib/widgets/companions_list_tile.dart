@@ -50,30 +50,3 @@ class CompanionsListTile extends StatelessWidget {
     );
   }
 }
-
-// ListTile(
-// leading: Container(
-// width: 100,
-// height: 100,
-// clipBehavior: Clip.antiAlias,
-// decoration: const BoxDecoration(
-// shape: BoxShape.circle,
-// ),
-// child: Image.asset(
-// 'assets/images/blank-profile-picture.png',
-// height: 47,
-// width: 47,
-// ),
-// ),
-// title: const Text(
-// 'James Black',
-// style: kTitleUserDetailsListTile,
-// ),
-// subtitle: const Padding(
-// padding: EdgeInsets.only(top: 8.0),
-// child: Text(
-// 'Spouce',
-// style: kSubTitleUserDetailsListTile,
-// ),
-// ),
-// );

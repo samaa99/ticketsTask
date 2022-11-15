@@ -117,6 +117,3 @@ class _UsersListPageState extends State<UsersListPage> {
     );
   }
 }
-
-// Navigator.push(context,
-// MaterialPageRoute(builder: (context) => const UserDetails()));
