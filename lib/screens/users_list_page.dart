@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:task1/screens/user_details_page.dart';
 
+import '../models/user_model.dart';
 import '../widgets/user_card.dart';
 
 class UsersListPage extends StatefulWidget {
@@ -11,6 +12,18 @@ class UsersListPage extends StatefulWidget {
 }
 
 class _UsersListPageState extends State<UsersListPage> {
+  List<User> users = [];
+
+  // Future<void> _getUsers() async {
+  //   users = await getUsers.getAllUsers();
+  // }
+
+  @override
+  void initState() {
+    super.initState();
+    // _getUsers();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +114,9 @@ class _UsersListPageState extends State<UsersListPage> {
               shrinkWrap: true,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return const UserCardListWidget();
+                return UserCardListWidget(
+                    // user: users[1],
+                    );
               }),
           onTap: () {
             showModalBottomSheet(

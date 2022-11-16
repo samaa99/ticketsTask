@@ -213,31 +213,29 @@ class _MatchInfoState extends State<MatchInfo> {
               height: _deviceHeight * 0.01,
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Transform.translate(
-                  offset: const Offset(-9, 0),
-                  child: Container(
-                    margin: const EdgeInsets.only(right: 10),
-                    height: _deviceHeight * 0.02,
-                    width: _deviceWidth * 0.04,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                      shape: BoxShape.circle,
+                Container(
+                  height: 16,
+                  width: 8,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(100),
+                      bottomRight: Radius.circular(100),
                     ),
                   ),
                 ),
-                DottedLine(
-                  lineLength: _deviceWidth * 0.84,
+                const Expanded(
+                  child: DottedLine(),
                 ),
-                Transform.translate(
-                  offset: const Offset(9, 0),
-                  child: Container(
-                    height: _deviceHeight * 0.02,
-                    width: _deviceWidth * 0.04,
-                    decoration: const BoxDecoration(
-                      color: Colors.black,
-                      shape: BoxShape.circle,
+                Container(
+                  height: 16,
+                  width: 8,
+                  decoration: const BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(100),
+                      bottomLeft: Radius.circular(100),
                     ),
                   ),
                 ),
