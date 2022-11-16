@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import '../constants.dart';
 
 class UserCardListWidget extends StatelessWidget {
-  // User user;
   UserCardListWidget({
-    // required this.user,
     Key? key,
   }) : super(key: key);
 
